@@ -32,12 +32,13 @@
 <!-- Phần Body -->
 <div class="container mt-4">
     <div class="table-container">
-        <table id="homework-table" class="table table-striped">
+        <table id="homework-table" class="table table-striped table-bordered">
             <caption><h2 class="text-center highlighted-section">Danh sách bài tập</h2></caption>
             <thead class="text-center">
             <tr>
                 <th class="text-center-vertical">Tên bài tập</th>
                 <th class="w-auto text-center-vertical">Link bài tập</th>
+                <th class="w-auto text-center-vertical">Link source code</th>
             </tr>
             </thead>
             <tbody class="text-center">
@@ -48,7 +49,7 @@
 </div>
 
 <!-- Nút phân trang -->
-<div id="pagination-buttons" class="text-center mt-3">
+<div id="pagination-buttons" class="text-center mt-3 d-flex justify-content-center">
     <!-- Nút phân trang sẽ được tạo bằng JavaScript -->
 </div>
 
@@ -62,15 +63,15 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const homeworkData = [
-            { name: 'EmailList', link: 'https://emaillist.azurewebsites.net/' },
-            { name: 'Survey', link: 'https://trong-survey-java-servlet.azurewebsites.net/servlet' },
-            { name: 'Bài tập 5.1', link: 'https://baiexercise5a.azurewebsites.net/' },
-            { name: 'Bài tập 5.2', link: 'https://baiexercise5b.azurewebsites.net/' },
-            { name: 'Bài tập 6.1', link: 'https://baitap6a-fpambrgkg4gubkg4.eastasia-01.azurewebsites.net/' },
-            { name: 'Bài tập 6.2', link: 'https://baitap6b-gugcd4gxh2emcra0.eastasia-01.azurewebsites.net/' },
-            { name: 'Bài tập 8.1', link: 'https://baitap8-dpbugheqbzbpbcdq.eastasia-01.azurewebsites.net/' },
-            { name: 'Bài tập 9.1', link: 'https://baitap9a.azurewebsites.net/' },
-            { name: 'Bài tập 9.2', link: 'https://baitap9b.azurewebsites.net/' },
+            { name: 'EmailList', link: 'https://emaillist.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTapDemo.git' },
+            { name: 'Survey', link: 'https://trong-survey-java-servlet.azurewebsites.net/servlet', source: 'https://github.com/LucThoiTrong/BaiTapNop.git' },
+            { name: 'Bài tập 5.1', link: 'https://baiexercise5a.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap5_1.git' },
+            { name: 'Bài tập 5.2', link: 'https://baiexercise5b.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap5_2.git' },
+            { name: 'Bài tập 6.1', link: 'https://baitap6a-fpambrgkg4gubkg4.eastasia-01.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap6_1.git' },
+            { name: 'Bài tập 6.2', link: 'https://baitap6b-gugcd4gxh2emcra0.eastasia-01.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap6_2.git' },
+            { name: 'Bài tập 8.1', link: 'https://baitap8-dpbugheqbzbpbcdq.eastasia-01.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap8_1.git' },
+            { name: 'Bài tập 9.1', link: 'https://baitap9a.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap9_1.git' },
+            { name: 'Bài tập 9.2', link: 'https://baitap9b.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap9_2.git' },
         ];
 
         const itemsPerPage = 5;
@@ -88,7 +89,8 @@
                 const row = document.createElement('tr');
                 row.innerHTML = `
                 <td class="homework-list text-center-vertical">${item.name}</td>
-                <td class="w-auto text-center-vertical"><a href="${item.link}" class="btn btn-primary">Xem bài tập</a></td>
+                <td class="w-auto text-center-vertical"><a href="${item.link}" class="btn custom-button mt-2 fw-bold">Xem bài tập</a></td>
+                <td class="w-auto text-center-vertical"><a href="${item.source}" class="btn custom-button mt-2 fw-bold">Xem source code</a></td>
             `;
                 tableBody.appendChild(row);
             });
@@ -102,7 +104,7 @@
             for (let i = 1; i <= numPages; i++) {
                 const button = document.createElement('button');
                 button.textContent = i;
-                button.classList.add('btn', 'btn-secondary', 'mx-1');
+                button.classList.add('btn', 'mx-1', 'custom-light-gray-button'); // Sử dụng màu trắng ngả xám tùy chỉnh
                 button.addEventListener('click', function () {
                     currentPage = i;
                     displayTablePage(currentPage);
@@ -116,6 +118,7 @@
         setupPaginationButtons();
     });
 </script>
+
 
 </body>
 </html>

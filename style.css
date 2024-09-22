@@ -59,3 +59,22 @@ caption {
 .table-container {
     margin: 20px auto;
 }
+.custom-light-gray-button {
+    background-color: #f2f2f2;
+    color: black;
+    border: none;
+}
+
+.custom-light-gray-button:hover {
+    background-color: #e9ecef; /* Màu hơi đậm hơn khi hover */
+}
+
+.custom-button {
+    background-color: #4db6ac; /* Màu xanh ngọc nhạt */
+    color: white; /* Màu chữ trắng */
+    border: none;
+}
+
+.custom-button:hover {
+    background-color: #398f7e; /* Màu tối hơn khi hover */
+}
