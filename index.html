@@ -13,23 +13,15 @@
 <header class="text-center py-3">
     <div class="container">
         <div class="row align-items-center">
-            <!-- Hình ảnh chính giữa -->
             <div class="col-md-4 text-center">
                 <img src="img/Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh.png" class="img-fluid" alt="Logo_Truong" style="max-width: 80px;">
                 <h5 class="mt-2 fw-bold highlighted-title">Ho Chi Minh City University Of Technology And Education</h5>
             </div>
-
-            <!-- Lời chào -->
             <div class="col-md-4 text-center">
                 <h4 class="mb-2 fst-italic highlighted-title">Welcome to my personal website!</h4>
             </div>
-
-            <!-- Thông tin cá nhân và ảnh đại diện -->
             <div class="col-md-4 text-center">
-                <!-- Ảnh đại diện -->
                 <img src="img/449379638_3810514395858468_8372448120695219935_n.jpg" class="img-fluid rounded-circle mb-2" alt="Ảnh đại diện" style="max-width: 80px;">
-
-                <!-- Thông tin cá nhân -->
                 <p class="fw-bold" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Lục Thới Trọng - 22110254</p>
                 <p style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Email: lucthoitrong@gmail.com</p>
             </div>
@@ -38,9 +30,9 @@
 </header>
 
 <!-- Phần Body -->
-<tbody class="container mt-4">
+<div class="container mt-4">
     <div class="table-container">
-        <table class="table table-striped">
+        <table id="homework-table" class="table table-striped">
             <caption><h2 class="text-center highlighted-section">Danh sách bài tập</h2></caption>
             <thead class="text-center">
             <tr>
@@ -49,38 +41,16 @@
             </tr>
             </thead>
             <tbody class="text-center">
-            <tr>
-                <td class="homework-list text-center-vertical">EmailList</td>
-                <td class="w-auto text-center-vertical"><a href="https://emaillist.azurewebsites.net/" class="btn btn-primary">Xem bài tập</a></td>
-            </tr>
-            <tr>
-                <td class="homework-list text-center-vertical">Survey</td>
-                <td class="w-auto text-center-vertical"><a href="https://trong-survey-java-servlet.azurewebsites.net/servlet" class="btn btn-primary">Xem bài tập</a></td>
-            </tr>
-            <tr>
-                <td class="homework-list text-center-vertical">Bài tập 5.1</td>
-                <td class="w-auto text-center-vertical"><a href="https://baiexercise5a.azurewebsites.net/" class="btn btn-primary">Xem bài tập</a></td>
-            </tr>
-            <tr>
-                <td class="homework-list text-center-vertical">Bài tập 5.2</td>
-                <td class="w-auto text-center-vertical"><a href="https://baiexercise5b.azurewebsites.net/" class="btn btn-primary">Xem bài tập</a></td>
-            </tr>
-            <tr>
-                <td class="homework-list text-center-vertical">Bài tập 6.1</td>
-                <td class="w-auto text-center-vertical"><a href="https://baitap6a-fpambrgkg4gubkg4.eastasia-01.azurewebsites.net/" class="btn btn-primary">Xem bài tập</a></td>
-            </tr>
-            <tr>
-                <td class="homework-list text-center-vertical">Bài tập 6.2</td>
-                <td class="w-auto text-center-vertical"><a href="https://baitap6b-gugcd4gxh2emcra0.eastasia-01.azurewebsites.net/" class="btn btn-primary">Xem bài tập</a></td>
-            </tr>
-            <tr>
-                <td class="homework-list text-center-vertical">Bài tập 8.1</td>
-                <td class="w-auto text-center-vertical"><a href="https://baitap8-dpbugheqbzbpbcdq.eastasia-01.azurewebsites.net/" class="btn btn-primary">Xem bài tập</a></td>
-            </tr>
+            <!-- Dữ liệu sẽ được tạo bằng JavaScript -->
             </tbody>
         </table>
     </div>
-</tbody>
+</div>
+
+<!-- Nút phân trang -->
+<div id="pagination-buttons" class="text-center mt-3">
+    <!-- Nút phân trang sẽ được tạo bằng JavaScript -->
+</div>
 
 <!-- Phần Footer -->
 <footer class="text-center p-3 mt-4 footer-text">
@@ -88,6 +58,64 @@
     <p>Liên hệ: <a href="mailto:lucthoitrong@gmail.com" class="text-white">lucthoitrong@gmail.com</a></p>
     <p>Điện thoại: 0935946471</p>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const homeworkData = [
+            { name: 'EmailList', link: 'https://emaillist.azurewebsites.net/' },
+            { name: 'Survey', link: 'https://trong-survey-java-servlet.azurewebsites.net/servlet' },
+            { name: 'Bài tập 5.1', link: 'https://baiexercise5a.azurewebsites.net/' },
+            { name: 'Bài tập 5.2', link: 'https://baiexercise5b.azurewebsites.net/' },
+            { name: 'Bài tập 6.1', link: 'https://baitap6a-fpambrgkg4gubkg4.eastasia-01.azurewebsites.net/' },
+            { name: 'Bài tập 6.2', link: 'https://baitap6b-gugcd4gxh2emcra0.eastasia-01.azurewebsites.net/' },
+            { name: 'Bài tập 8.1', link: 'https://baitap8-dpbugheqbzbpbcdq.eastasia-01.azurewebsites.net/' },
+            { name: 'Bài tập 9.1', link: 'https://baitap9a.azurewebsites.net/' },
+            { name: 'Bài tập 9.2', link: 'https://baitap9b.azurewebsites.net/' },
+        ];
+
+        const itemsPerPage = 5;
+        let currentPage = 1;
+
+        function displayTablePage(page) {
+            const tableBody = document.querySelector('#homework-table tbody');
+            tableBody.innerHTML = '';
+
+            const startIdx = (page - 1) * itemsPerPage;
+            const endIdx = startIdx + itemsPerPage;
+            const pageItems = homeworkData.slice(startIdx, endIdx);
+
+            pageItems.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                <td class="homework-list text-center-vertical">${item.name}</td>
+                <td class="w-auto text-center-vertical"><a href="${item.link}" class="btn btn-primary">Xem bài tập</a></td>
+            `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function setupPaginationButtons() {
+            const paginationContainer = document.querySelector('#pagination-buttons');
+            paginationContainer.innerHTML = '';
+
+            const numPages = Math.ceil(homeworkData.length / itemsPerPage);
+            for (let i = 1; i <= numPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                button.classList.add('btn', 'btn-secondary', 'mx-1');
+                button.addEventListener('click', function () {
+                    currentPage = i;
+                    displayTablePage(currentPage);
+                });
+                paginationContainer.appendChild(button);
+            }
+        }
+
+        // Khởi tạo bảng và nút phân trang
+        displayTablePage(currentPage);
+        setupPaginationButtons();
+    });
+</script>
 
 </body>
 </html>

@@ -56,3 +56,6 @@ caption {
     display: table-caption;
     caption-side: top;
 }
+.table-container {
+    margin: 20px auto;
+}
