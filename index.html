@@ -6,18 +6,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <title>My Personal Website</title>
+    <title>Trang Web Cá Nhân</title>
     <link rel="stylesheet" href="style.css" type="text/css">
-</head>
+</head>d
 <body class="body-background">
-<header class="text-center py-3">
+
+<!-- Header -->
+<header class="text-center py-3 bg-light">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center mb-2 mb-md-0">
                 <img src="img/Logo_Trường_Đại_Học_Sư_Phạm_Kỹ_Thuật_TP_Hồ_Chí_Minh.png" class="img-fluid" alt="Logo_Truong" style="max-width: 80px;">
                 <h5 class="mt-2 fw-bold highlighted-title">Ho Chi Minh City University Of Technology And Education</h5>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-4 text-center mb-2 mb-md-0">
                 <h4 class="mb-2 fst-italic highlighted-title">Welcome to my personal website!</h4>
             </div>
             <div class="col-md-4 text-center">
@@ -29,16 +31,37 @@
     </div>
 </header>
 
-<!-- Phần Body -->
-<div class="container mt-4">
-    <div class="table-container">
-        <table id="homework-table" class="table table-striped table-bordered">
-            <caption><h2 class="text-center highlighted-section">Danh sách bài tập</h2></caption>
+<!-- Giới thiệu bản thân -->
+<section class="container mt-4">
+    <div class="row align-items-center p-3 bg-light rounded shadow-sm">
+        <h2 class="text-primary fw-bold highlighted-title">Giới thiệu:</h2>
+        <div class="row align-items-center">
+            <!-- Cột ảnh -->
+            <div class="col-md-4 text-center">
+                <img src="img/z6018764857190_17d6eedc2e2d06fb35cf32de714c9094.jpg" class="img-fluid rounded mb-3 personal-image" alt="Ảnh cá nhân" style="max-width: 200px;">
+            </div>
+            <!-- Cột văn bản -->
+            <div class="col-md-8 intro-text">
+                <p>Xin chào mọi người! Mình tên là <strong>Lục Thới Trọng</strong> - sinh viên năm ba ngành Công nghệ Thông tin tại trường Đại học Sư phạm Kỹ thuật TP.HCM.</p>
+                <p>Mục tiêu của mình là không ngừng học hỏi và rèn luyện, phát triển các kỹ năng để trở thành một con người tốt hơn mỗi ngày.</p>
+                <p>Mình rất thích giải quyết các vấn đề kỹ thuật và làm việc trong môi trường nhóm để tạo ra những sản phẩm có giá trị.</p>
+                <p class="font-italic text-muted">Với mình: "<strong>Chỉ có sự nỗ lực kiên trì mới tạo ra sự khác biệt trong cuộc sống.</strong>" <span class="text-muted">(Only persistent effort can make a difference in life.)</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Danh sách bài tập -->
+<section class="container mt-4">
+    <div class="table-responsive bg-light p-3 rounded shadow-sm">
+        <h2 class="text-primary fw-bold highlighted-title">Danh sách bài tập:</h2>
+        <table id="homework-table" class="table table-striped table-bordered mt-3">
             <thead class="text-center">
             <tr>
-                <th class="text-center-vertical">Tên bài tập</th>
-                <th class="w-auto text-center-vertical">Link bài tập</th>
-                <th class="w-auto text-center-vertical">Link source code</th>
+                <th class="text-center">Tên bài tập</th>
+                <th class="w-auto text-center">Link bài tập</th>
+                <th class="w-auto text-center">Link source code</th>
             </tr>
             </thead>
             <tbody class="text-center">
@@ -46,16 +69,16 @@
             </tbody>
         </table>
     </div>
-</div>
+</section>
 
 <!-- Nút phân trang -->
 <div id="pagination-buttons" class="text-center mt-3 d-flex justify-content-center">
     <!-- Nút phân trang sẽ được tạo bằng JavaScript -->
 </div>
 
-<!-- Phần Footer -->
-<footer class="text-center p-3 mt-4 footer-text">
-    <p>&copy; 2024 Trang Web của Tôi - Bản quyền thuộc :Lục Thới Trọng</p>
+<!-- Footer -->
+<footer class="text-center p-3 mt-4 footer-text bg-dark text-white">
+    <p>&copy; 2024 Trang Web của Tôi - Bản quyền thuộc : Lục Thới Trọng</p>
     <p>Liên hệ: <a href="mailto:lucthoitrong@gmail.com" class="text-white">lucthoitrong@gmail.com</a></p>
     <p>Điện thoại: 0935946471</p>
 </footer>
@@ -65,61 +88,64 @@
         const homeworkData = [
             { name: 'EmailList', link: 'https://emaillist.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTapDemo.git' },
             { name: 'Survey', link: 'https://trong-survey-java-servlet.azurewebsites.net/servlet', source: 'https://github.com/LucThoiTrong/BaiTapNop.git' },
-            { name: 'Bài tập 5.1', link: 'https://baiexercise5a.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap5_1.git' },
+            { name: 'Bài tập 5.1', link: 'https://baitap5a.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap5_1.git' },
             { name: 'Bài tập 5.2', link: 'https://baiexercise5b.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap5_2.git' },
-            { name: 'Bài tập 6.1', link: 'https://baitap6a-fpambrgkg4gubkg4.eastasia-01.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap6_1.git' },
+            { name: 'Bài tập 6.1', link: 'https://baitap6a.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap6_1.git' },
             { name: 'Bài tập 6.2', link: 'https://baitap6b-gugcd4gxh2emcra0.eastasia-01.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap6_2.git' },
-            { name: 'Bài tập 8.1', link: 'https://baitap8-dpbugheqbzbpbcdq.eastasia-01.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap8_1.git' },
+            { name: 'Bài tập 8.1', link: 'https://baitap8.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap8_1.git' },
             { name: 'Bài tập 9.1', link: 'https://baitap9a.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap9_1.git' },
-            { name: 'Bài tập 9.2', link: 'https://baitap9b.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTap9_2.git' },
-            { name: 'Bài tập C7', link: 'https://baitapc7.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTapC7.git'}
+            { name: 'Bài tập C7', link: 'https://baitapc7.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTapC7.git'},
+            { name: 'Bài tập C12', link: 'https://baitapc12.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTapC7.git'},
+            { name: 'Bài tập ConnectionPool', link: 'https://baitapconnectionpool.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTapC7.git'},
+            { name: 'Bài tập murach_JPA', link: 'https://murachjpa.azurewebsites.net/', source: 'https://github.com/LucThoiTrong/BaiTapC7.git'},
+            { name: 'Bài tập JavaMail', link: 'https://baitapjavamail.azurewebsites.net/emailList', source: 'https://github.com/LucThoiTrong/BaiTapC7.git'},
         ];
 
         const itemsPerPage = 5;
         let currentPage = 1;
 
-        function displayTablePage(page) {
+        // Hàm tạo bảng từ dữ liệu bài tập
+        function renderTable() {
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
             const tableBody = document.querySelector('#homework-table tbody');
             tableBody.innerHTML = '';
 
-            const startIdx = (page - 1) * itemsPerPage;
-            const endIdx = startIdx + itemsPerPage;
-            const pageItems = homeworkData.slice(startIdx, endIdx);
+            const paginatedData = homeworkData.slice(start, end);
 
-            pageItems.forEach(item => {
+            paginatedData.forEach(item => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                <td class="homework-list text-center-vertical">${item.name}</td>
-                <td class="w-auto text-center-vertical"><a href="${item.link}" class="btn custom-button mt-2 fw-bold">Xem bài tập</a></td>
-                <td class="w-auto text-center-vertical"><a href="${item.source}" class="btn custom-button mt-2 fw-bold">Xem source code</a></td>
-            `;
+                     <td class="homework-list text-center-vertical">${item.name}</td>
+                    <td class="w-auto text-center-vertical"><a href="${item.link}" class="btn custom-button mt-2 fw-bold">Xem bài tập</a></td>
+                    <td class="w-auto text-center-vertical"><a href="${item.source}" class="btn custom-button mt-2 fw-bold">Xem source code</a></td>
+                `;
                 tableBody.appendChild(row);
             });
         }
 
-        function setupPaginationButtons() {
-            const paginationContainer = document.querySelector('#pagination-buttons');
-            paginationContainer.innerHTML = '';
+        // Hàm tạo các nút phân trang
+        function renderPagination() {
+            const totalPages = Math.ceil(homeworkData.length / itemsPerPage);
+            const paginationButtons = document.getElementById('pagination-buttons');
+            paginationButtons.innerHTML = '';
 
-            const numPages = Math.ceil(homeworkData.length / itemsPerPage);
-            for (let i = 1; i <= numPages; i++) {
+            for (let i = 1; i <= totalPages; i++) {
                 const button = document.createElement('button');
-                button.textContent = i;
-                button.classList.add('btn', 'mx-1', 'custom-light-gray-button'); // Sử dụng màu trắng ngả xám tùy chỉnh
+                button.classList.add('btn', 'mx-1', 'custom-light-gray-button');
+                button.innerText = i;
                 button.addEventListener('click', function () {
                     currentPage = i;
-                    displayTablePage(currentPage);
+                    renderTable();
                 });
-                paginationContainer.appendChild(button);
+                paginationButtons.appendChild(button);
             }
         }
 
-        // Khởi tạo bảng và nút phân trang
-        displayTablePage(currentPage);
-        setupPaginationButtons();
+        renderTable();
+        renderPagination();
     });
 </script>
-
 
 </body>
 </html>
